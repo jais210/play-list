@@ -1,3 +1,4 @@
+// creación de una clase
 class Song {
     constructor(title, artist, duration) {
         this.title = title;
@@ -29,44 +30,45 @@ class Song {
         return htmlString;
     }
 }
-
+// creación de un objeto literal
 var myPlaylist = {
-    init: function() {
-        this.songs = [];
-        this.nowPlayingIndex = 0;
-    },
-
-    add: function(song) {
-        this.songs.push(song);
-    },
-
-    play: function() {
-        var currentSong = this.songs[this.nowPlayingIndex];
-        currentSong.play();
-    },
-
-    stop: function() {
-        var currentSong = this.songs[this.nowPlayingIndex];
-        currentSong.stop();
-    },
-
-    next: function() {
-        this.stop();
-        this.nowPlayingIndex++;
-        if (this.nowPlayingIndex === this.songs.length) {
+        // usar el init 
+        init: function() {
+            this.songs = [];
             this.nowPlayingIndex = 0;
-        }
-        this.play();
-    },
+        },
 
-    renderInElement: function(list) {
-        list.innerHTML = "";
-        for (var i = 0; i < this.songs.length; i++) {
-            list.innerHTML += this.songs[i].toHTML();
+        add: function(song) {
+            this.songs.push(song);
+        },
+
+        play: function() {
+            var currentSong = this.songs[this.nowPlayingIndex];
+            currentSong.play();
+        },
+
+        stop: function() {
+            var currentSong = this.songs[this.nowPlayingIndex];
+            currentSong.stop();
+        },
+
+        next: function() {
+            this.stop();
+            this.nowPlayingIndex++;
+            if (this.nowPlayingIndex === this.songs.length) {
+                this.nowPlayingIndex = 0;
+            }
+            this.play();
+        },
+
+        renderInElement: function(list) {
+            list.innerHTML = "";
+            for (var i = 0; i < this.songs.length; i++) {
+                list.innerHTML += this.songs[i].toHTML();
+            }
         }
     }
-}
-
+    // creación de clase
 class Playlist {
 
     constructor() {
