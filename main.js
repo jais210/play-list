@@ -32,7 +32,7 @@ class Song {
 }
 // creación de un objeto literal
 var myPlaylist = {
-        // usar el init 
+        // usar el init para que inicie la función donde se almacena los elementos del array vacío
         init: function() {
             this.songs = [];
             this.nowPlayingIndex = 0;
